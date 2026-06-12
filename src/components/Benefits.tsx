@@ -30,11 +30,6 @@ export default function Benefits() {
       iconName: "UserCheck"
     },
     {
-      title: "Soluciones rápidas",
-      description: "Servicios express para pantallas y bateríasiseñados para devolverte el celular operativo en pocas horas.",
-      iconName: "Clock3"
-    },
-    {
       title: "Experiencia técnica",
       description: "Años de especialización real en fallas críticas de placas base y sitemas lógicos de todo tipo de smartphones.",
       iconName: "Briefcase"

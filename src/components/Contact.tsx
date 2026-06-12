@@ -92,8 +92,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-sans text-xs uppercase tracking-widest font-extrabold text-white">HORARIOS DE ATENCIÓN</h4>
                   <p className="text-gray-300 text-xs mt-1.5 leading-relaxed font-light">
-                    Lunes a Viernes de 09:00 a 18:00 hs.<br />
-                    Sábados de 10:00 a 13:00 hs.
+                    Lunes a Viernes de 08:30 a 12:30, y de 14:30 a 18:30 hs.<br />
+                    Sábados de 08:30 a 13:00 hs.
                   </p>
                 </div>
               </div>

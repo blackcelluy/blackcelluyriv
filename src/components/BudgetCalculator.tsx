@@ -39,59 +39,98 @@ export default function BudgetCalculator() {
     { id: "Otro", name: "Otro / Multimarcas" }
   ];
 
-  const issues: IssueOption[] = [
-    { 
-      id: "microsoldadura", 
-      name: "Microsoldadura (Falla de Placa)", 
-      basePrice: "Desde $1.500", 
-      avgTime: "24 a 48 Horas", 
-      severity: "Compleja" 
-    },
-    { 
-      id: "pantalla", 
-      name: "Cambio de Pantalla", 
-      basePrice: "Varía según modelo", 
-      avgTime: "1 a 2 Horas", 
-      severity: "Media" 
-    },
-    { 
-      id: "bateria", 
-      name: "Cambio de Batería", 
-      basePrice: "Desde $950", 
-      avgTime: "45 a 60 Minutos", 
-      severity: "Baja" 
-    },
-    { 
-      id: "pin-carga", 
-      name: "Cambio de Pin de Carga", 
-      basePrice: "Desde $1.200", 
-      avgTime: "1 a 3 Horas", 
-      severity: "Media" 
-    },
-    { 
-      id: "software", 
-      name: "Problemas de Software/Sistema", 
-      basePrice: "Desde $800", 
-      avgTime: "2 a 4 Horas", 
-      severity: "Baja" 
-    },
-    { 
-      id: "respaldo", 
-      name: "Respaldo de Información (Copia de Seguridad / Traspaso)", 
-      basePrice: "Desde $850", 
-      avgTime: "2 a 4 Horas", 
-      severity: "Baja" 
-    },
-    { 
-      id: "diagnostico", 
-      name: "Diagnóstico Técnico Especializado", 
-      basePrice: "Sin costo con reparación", 
-      avgTime: "1 a 2 Horas", 
-      severity: "Baja" 
-    }
+  // We define dynamic issue categories
+  const issueTypes = [
+    { id: "pantalla", name: "Cambio de Pantalla" },
+    { id: "bateria", name: "Cambio de Batería" },
+    { id: "microsoldadura", name: "Microsoldadura (Falla de Placa)" },
+    { id: "pin-carga", name: "Cambio de Pin de Carga" },
+    { id: "placa-carga", name: "Cambio de Placa de Carga" },
+    { id: "software", name: "Problemas de Software/Sistema" },
+    { id: "respaldo", name: "Respaldo de Información (Copia de Seguridad)" },
+    { id: "diagnostico", name: "Diagnóstico Técnico Especializado" }
   ];
 
-  const currentIssueData = issues.find(i => i.id === selectedIssue) || issues[1];
+  // Dynamically compute estimated pricing according to exact business rules
+  const getDynamicPriceAndInfo = () => {
+    const isApple = selectedBrand === "Apple";
+    switch (selectedIssue) {
+      case "pantalla":
+        return {
+          id: "pantalla",
+          name: "Cambio de Pantalla",
+          basePrice: isApple ? "Desde $2.600" : "Desde $2.300",
+          avgTime: "2:30 a 3:30 Horas",
+          severity: "Media" as const
+        };
+      case "bateria":
+        return {
+          id: "bateria",
+          name: "Cambio de Batería",
+          basePrice: isApple ? "Desde $2.600" : "Desde $1.500",
+          avgTime: "2 Horas",
+          severity: "Baja" as const
+        };
+      case "microsoldadura":
+        return {
+          id: "microsoldadura",
+          name: "Microsoldadura (Falla de Placa)",
+          basePrice: "Base $3.000",
+          avgTime: "73 Horas Diag. / 1 Semana Rep.",
+          severity: "Compleja" as const
+        };
+      case "pin-carga":
+        return {
+          id: "pin-carga",
+          name: "Cambio de Pin de Carga",
+          basePrice: "$900",
+          avgTime: "2 Horas",
+          severity: "Baja" as const
+        };
+      case "placa-carga":
+        return {
+          id: "placa-carga",
+          name: "Cambio de Placa de Carga",
+          basePrice: "$1.400",
+          avgTime: "2 a 3 Horas",
+          severity: "Baja text-white" as const
+        };
+      case "software":
+        return {
+          id: "software",
+          name: "Problemas de Software/Sistema",
+          basePrice: "Desde $1.500",
+          avgTime: "12 a 24 Horas",
+          severity: "Baja" as const
+        };
+      case "respaldo":
+        return {
+          id: "respaldo",
+          name: "Respaldo de Información (Copia de Seguridad)",
+          basePrice: "Desde $1.000",
+          avgTime: "Desde 24 Horas (según volumen de información)",
+          severity: "Baja" as const
+        };
+      case "diagnostico":
+        return {
+          id: "diagnostico",
+          name: "Diagnóstico Técnico Especializado",
+          basePrice: "Gratis con la reparación",
+          avgTime: "1 a 2 Horas",
+          severity: "Baja" as const
+        };
+      default:
+        return {
+          id: "diagnostico",
+          name: "Diagnóstico Técnico Especializado",
+          basePrice: "Gratis con la reparación",
+          avgTime: "1 a 2 Horas",
+          severity: "Baja" as const
+        };
+    }
+  };
+
+  const currentIssueData = getDynamicPriceAndInfo();
 
   const handleWhatsAppSend = (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,9 +162,10 @@ export default function BudgetCalculator() {
   };
 
   const getSeverityStyle = (severity: string) => {
+    if (severity.includes("Baja")) {
+      return "text-green-400 bg-green-500/10 border border-green-500/25";
+    }
     switch (severity) {
-      case "Baja":
-        return "text-green-400 bg-green-500/10 border border-green-500/25";
       case "Media":
         return "text-yellow-400 bg-yellow-500/10 border border-yellow-500/25";
       case "Alta":
@@ -213,7 +253,7 @@ export default function BudgetCalculator() {
               onChange={(e) => setSelectedIssue(e.target.value)}
               className="w-full bg-black/65 border border-white/10 hover:border-gold/30 focus:border-gold rounded-lg px-4 py-3.5 text-sm text-white outline-none appearance-none transition-all focus:ring-1 focus:ring-gold cursor-pointer"
             >
-              {issues.map((option) => (
+              {issueTypes.map((option) => (
                 <option key={option.id} value={option.id} className="bg-dark-gray text-white">
                   {option.name}
                 </option>
@@ -233,7 +273,7 @@ export default function BudgetCalculator() {
           <div className="flex justify-between items-center border-b border-white/5 pb-3">
             <span className="text-gray-500 text-[10px] font-mono uppercase tracking-wider">REPORTE ESTIMADO DE TRABAJO</span>
             <span className={`px-2.5 py-0.5 rounded text-[9px] font-mono uppercase font-bold tracking-widest ${getSeverityStyle(currentIssueData.severity)}`}>
-              Complejidad: {currentIssueData.severity}
+              Complejidad: {currentIssueData.severity.replace(" text-white", "")}
             </span>
           </div>
 

@@ -25,8 +25,8 @@ export default function Services() {
       description: "Reparación avanzada de placas lógicas con microscopio óptico de alta definición.",
       details: "Solucionamos fallas complejas que otros talleres consideran 'irreparables'. Incluye reparación de cortos circuitos, cambio de integrados de carga (Tristar/Hydra), reparación de fallas de retroiluminación (Backlight), reparación de líneas de display interrumpidas, problemas de señal, wi-fi, reconstrucción de pistas rotas y soldadura BGA (reballing).",
       iconName: "Cpu",
-      avgTime: "24 a 48 Horas",
-      priceEstimate: "Desde $1.500"
+      avgTime: "73 Horas Diag. / 1 Semana Rep.",
+      priceEstimate: "Desde $3.000"
     },
     {
       id: "pantalla",
@@ -34,8 +34,8 @@ export default function Services() {
       description: "Reemplazo profesional de pantallas dañadas con calibración táctil completa.",
       details: "Instalación de repuestos tipo Original u OEM de máxima categoría para conservar la densidad de pixeles, el brillo nítido y la respuesta táctil exacta. Realizamos el traspaso del número de serie para no perder el TrueTone en iPhone y mantenemos el ajuste exacto del marco exterior.",
       iconName: "Smartphone",
-      avgTime: "1 a 2 Horas",
-      priceEstimate: "Depende modelo (Consulte)"
+      avgTime: "2:30 a 3:30 Horas",
+      priceEstimate: "An. desde $2.300 / iOS desde $2.600"
     },
     {
       id: "bateria",
@@ -43,8 +43,8 @@ export default function Services() {
       description: "Recupera la autonomía de fábrica y el máximo rendimiento de tu equipo.",
       details: "Sustitución inmediata con baterías de alta densidad que garantizan la salud al 100%. Calibración de voltaje inicial de carga, protección térmica integrada y traspaso de chip de control en modelos iPhone seleccionados para preservar la medición nativa de salud sin alertas de sistema.",
       iconName: "BatteryCharging",
-      avgTime: "45 a 60 Minutos",
-      priceEstimate: "Desde $950"
+      avgTime: "2 Horas",
+      priceEstimate: "An. desde $1.500 / iOS desde $2.600"
     },
     {
       id: "pin-carga",
@@ -52,8 +52,17 @@ export default function Services() {
       description: "Solución definitiva para fallas de carga lenta, intermitente o sin conexión.",
       details: "Reemplazo del puerto de carga USB-C, Lightning o Micro-USB. Limpieza profunda ultrasónica, resoldadura reforzada sobre placa de anclaje para evitar que vuelva a aflojarse con el conector físico y medición del flujo de corriente de entrada (Amperaje adecuado).",
       iconName: "Zap",
-      avgTime: "1 a 3 Horas",
-      priceEstimate: "Desde $1.200"
+      avgTime: "2 Horas",
+      priceEstimate: "Desde $900"
+    },
+    {
+      id: "placa-carga",
+      title: "Cambio de Placa de Carga",
+      description: "Sustitución completa del sub-módulo de carga de alta velocidad.",
+      details: "Reemplazo completo de la tarjeta secundaria (sub-board) que aloja el conector de carga, micrófonos inferiores, conector de antena y circuito integrado de carga rápida USB Power Delivery u On-The-Go. Ideal cuando varios componentes inferiores fallan simultáneamente.",
+      iconName: "Zap",
+      avgTime: "2 a 3 Horas",
+      priceEstimate: "Desde $1.400"
     },
     {
       id: "software",
@@ -61,8 +70,8 @@ export default function Services() {
       description: "Solución de reinicios constantes, flasheos, cuentas y bloqueos lógicos.",
       details: "Restablecimiento de sistemas colapsados, bucles en logo de inicio (bootloops), reinstalación limpia de iOS y Android sin pérdida de datos cuando es físicamente viable, depuración de logs de fallas de kernel, copias de seguridad de ROMs y reparación de archivos de partición dañada.",
       iconName: "Terminal",
-      avgTime: "2 a 4 Horas",
-      priceEstimate: "Desde $800"
+      avgTime: "12 a 24 Horas",
+      priceEstimate: "Desde $1.500"
     },
     {
       id: "respaldo",
@@ -70,8 +79,8 @@ export default function Services() {
       description: "Salvaguarda y transferencia de tus fotos, chats, contactos y documentos.",
       details: "Realizamos copias de seguridad completas de tus conversaciones de WhatsApp, galerías de fotos, agendas de contactos y configuraciones. Facilitamos también el traspaso seguro de datos completos entre sistemas Android e iOS al cambiar de dispositivo, garantizando confidencialidad absoluta.",
       iconName: "Save",
-      avgTime: "2 a 4 Horas",
-      priceEstimate: "Desde $850"
+      avgTime: "Desde 24 Horas (según volumen de información)",
+      priceEstimate: "Desde $1.000"
     }
   ];
 
