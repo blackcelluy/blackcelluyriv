@@ -29,7 +29,7 @@ export default function AboutUs() {
     },
     {
       title: "Respaldo de información",
-      description: "Tu privacidad es sagrada. Protegemos y extraemos la base de datos de tu teléfono con total confidencialidad.",
+      description: "Tu privacidad es sagrada. Respaldamos y protegemos la información de tu teléfono con total confidencialidad.",
       iconName: "Database"
     },
     {

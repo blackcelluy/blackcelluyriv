@@ -54,7 +54,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-10 max-w-xl font-light"
             >
-              Especialistas en microsoldadura avanzada de placas lógicas, cambios express de pantalla y baterías de calidad original, respaldo total y recuperación de memoria de equipos Android y Apple.
+              Especialistas en microsoldadura avanzada de placas lógicas, cambios express de pantalla y baterías de calidad original, y respaldo total de información de tu equipo Android o iPhone.
             </motion.p>
 
             {/* CTA Buttons */}

@@ -30,8 +30,8 @@ export default function Testimonials() {
       name: "Valentina Méndez",
       rating: 5,
       date: "Hace 10 días",
-      repairType: "Xiaomi Redmi Note 11 - Recuperación de Datos Completo",
-      comment: "Súper agradecida con BlackCell. Había dado por perdidos todos mis archivos de trabajo y fotos familiares porque el teléfono se quebró totalmente. Lograron extraer la memoria física y recuperarme absolutamente todo de forma muy segura."
+      repairType: "iPhone 13 - Respaldo y Transferencia Completa",
+      comment: "Súper agradecida con BlackCell. Tenía miedo de perder todos mis archivos de trabajo y fotos familiares al cambiar de celular. Hicieron un respaldo total y traspasaron absolutamente todo de manera rápida y muy segura."
     }
   ];
 

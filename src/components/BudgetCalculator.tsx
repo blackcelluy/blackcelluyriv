@@ -77,10 +77,10 @@ export default function BudgetCalculator() {
     },
     { 
       id: "respaldo", 
-      name: "Respaldo y Recuperación de Datos", 
-      basePrice: "Según volumen", 
-      avgTime: "24 a 48 Horas", 
-      severity: "Media" 
+      name: "Respaldo de Información (Copia de Seguridad / Traspaso)", 
+      basePrice: "Desde $850", 
+      avgTime: "2 a 4 Horas", 
+      severity: "Baja" 
     },
     { 
       id: "diagnostico", 

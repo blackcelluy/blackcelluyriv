@@ -66,12 +66,12 @@ export default function Services() {
     },
     {
       id: "respaldo",
-      title: "Respaldo y Recuperación",
-      description: "Salvaguarda y recuperación de bases de datos, fotos, chats y documentos.",
-      details: "Extracción a bajo nivel de memorias NAND Flash de equipos apagados, mojados o destruidos. Copias de seguridad cifradas de conversaciones de WhatsApp, galerías de fotos, agendas de contactos, configuración de cuentas, y traspaso seguro de datos completos entre Android e iOS.",
+      title: "Respaldo de Información",
+      description: "Salvaguarda y transferencia de tus fotos, chats, contactos y documentos.",
+      details: "Realizamos copias de seguridad completas de tus conversaciones de WhatsApp, galerías de fotos, agendas de contactos y configuraciones. Facilitamos también el traspaso seguro de datos completos entre sistemas Android e iOS al cambiar de dispositivo, garantizando confidencialidad absoluta.",
       iconName: "Save",
-      avgTime: "24 a 48 Horas",
-      priceEstimate: "Según volumen de datos"
+      avgTime: "2 a 4 Horas",
+      priceEstimate: "Desde $850"
     }
   ];
 
