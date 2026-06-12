@@ -1,0 +1,6 @@
+{
+  "name": "BLACKCELL",
+  "description": "Premium Phone Repair - Especialistas en microsoldadura, pantallas, baterías y reparación avanzada de celulares.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
